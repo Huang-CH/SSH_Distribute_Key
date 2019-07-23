@@ -49,7 +49,10 @@ def distribute_key():
 if __name__ == '__main__':
     #判断创建SSH密钥对是否成功，如果不成功，再次执行
     if ssh_keygen() == 1:
-        count = 0
+        print('=' * 30)
+        print("创建SSH密钥对失败！将尝试重新创建……")
+        print('=' * 30)
+        time.sleep(1)
         ssh_keygen()
     #如果成功，则输出成功信息
     else:
